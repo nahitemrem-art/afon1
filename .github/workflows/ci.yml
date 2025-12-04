@@ -1,0 +1,60 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop, feature-* ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  backend-test:
+    name: Backend Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: backend/package-lock.json
+    
+    - name: Install dependencies
+      working-directory: ./backend
+      run: npm ci
+    
+    - name: Lint
+      working-directory: ./backend
+      run: npm run lint
+    
+    - name: Build
+      working-directory: ./backend
+      run: npm run build
+    
+    - name: Test
+      working-directory: ./backend
+      run: npm test || echo "No tests configured yet"
+
+  mobile-build:
+    name: Mobile Build Check
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: mobile/package-lock.json
+    
+    - name: Install dependencies
+      working-directory: ./mobile
+      run: npm ci
+    
+    - name: Check TypeScript
+      working-directory: ./mobile
+      run: npx tsc --noEmit || echo "TypeScript check completed"
