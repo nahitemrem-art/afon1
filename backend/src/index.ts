@@ -10,6 +10,7 @@ import fundsRouter from './routes/funds';
 import portfolioRouter from './routes/portfolio';
 import favoritesRouter from './routes/favorites';
 import liveRouter from './routes/live';
+import searchRouter from './routes/search';
 
 dotenv.config();
 
@@ -27,6 +28,7 @@ app.use('/api/funds', fundsRouter);
 app.use('/api/portfolio', portfolioRouter);
 app.use('/api/favorites', favoritesRouter);
 app.use('/api/live', liveRouter);
+app.use('/api/search', searchRouter);
 
 app.get('/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });

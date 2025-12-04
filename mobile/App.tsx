@@ -9,6 +9,7 @@ import FundsScreen from './src/screens/FundsScreen';
 import FavoritesScreen from './src/screens/FavoritesScreen';
 import PortfolioScreen from './src/screens/PortfolioScreen';
 import LiveScreen from './src/screens/LiveScreen';
+import SearchScreen from './src/screens/SearchScreen';
 
 const Tab = createBottomTabNavigator();
 const queryClient = new QueryClient();
@@ -23,7 +24,9 @@ export default function App() {
             tabBarIcon: ({ focused, color, size }) => {
               let iconName: any;
 
-              if (route.name === 'Fonlar') {
+              if (route.name === 'Ara') {
+                iconName = focused ? 'search' : 'search-outline';
+              } else if (route.name === 'Fonlar') {
                 iconName = focused ? 'list' : 'list-outline';
               } else if (route.name === 'Favoriler') {
                 iconName = focused ? 'star' : 'star-outline';
@@ -46,6 +49,7 @@ export default function App() {
             },
           })}
         >
+          <Tab.Screen name="Ara" component={SearchScreen} />
           <Tab.Screen name="Fonlar" component={FundsScreen} />
           <Tab.Screen name="Canlı" component={LiveScreen} />
           <Tab.Screen name="Favoriler" component={FavoritesScreen} />
