@@ -1,0 +1,16 @@
+{
+  "name": "@tefas-tracker/shared",
+  "version": "1.0.0",
+  "description": "Shared types and utilities for TEFAS Tracker",
+  "main": "types.ts",
+  "types": "types.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": ["tefas", "shared", "types"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

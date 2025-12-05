@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=development
+      - DATABASE_PATH=/app/data/tefas.db
+      - CORS_ORIGIN=*
+    volumes:
+      - ./backend:/app
+      - backend-data:/app/data
+      - /app/node_modules
+    command: npm run dev
+    restart: unless-stopped
+
+volumes:
+  backend-data:

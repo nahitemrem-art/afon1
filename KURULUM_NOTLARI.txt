@@ -1,0 +1,111 @@
+═══════════════════════════════════════════════════════════════
+  TEFAS TRACKER - WINDOWS KURULUM NOTLARI
+═══════════════════════════════════════════════════════════════
+
+📝 ŞU ANKİ DURUM:
+- Mobile dependencies ✓ yüklendi
+- Backend dependencies ✗ yüklenmedi
+- expo-router hatası ✓ düzeltildi
+
+═══════════════════════════════════════════════════════════════
+
+🚀 ŞİMDİ YAPMANIZ GEREKENLER:
+
+ADIM 1: Backend Dependencies Yükle
+────────────────────────────────────
+PowerShell'de:
+cd C:\Users\admin\Downloads\afon1\backend
+npm install
+
+Beklenen süre: 2-3 dakika
+Dosya boyutu: ~200-300 MB
+
+ADIM 2: Backend'i Başlat
+────────────────────────────────────
+Aynı terminalde:
+npm run dev
+
+Göreceğiniz çıktı:
+✅ Database initialized
+✅ Data sync started
+🚀 Server running on http://localhost:3000
+Fetching all funds from TEFAS API...
+
+ADIM 3: Mobile'ı Başlat (YENİ TERMINAL)
+────────────────────────────────────
+Yeni PowerShell açın:
+cd C:\Users\admin\Downloads\afon1\mobile
+npm start
+
+Göreceğiniz çıktı:
+› Metro waiting on exp://...
+› Press w to open in web browser
+
+ADIM 4: Web'de Aç
+────────────────────────────────────
+Mobile terminalinde:
+'w' tuşuna bas
+
+Tarayıcı otomatik açılır!
+
+═══════════════════════════════════════════════════════════════
+
+🎯 OTOMATIK KURULUM (Alternatif):
+
+PowerShell'i Administrator olarak aç:
+cd C:\Users\admin\Downloads\afon1
+.\scripts\windows-kurulum.ps1
+
+Sonra başlatma:
+.\scripts\windows-baslatma.ps1
+
+═══════════════════════════════════════════════════════════════
+
+❓ SORUN YAŞARSAN:
+
+1. better-sqlite3 hatası alırsan:
+   → WINDOWS_SETUP.md dosyasına bak
+   → Docker kullan veya sql.js versiyonunu kullan
+
+2. Port 3000 kullanımda hatası:
+   → netstat -ano | findstr :3000
+   → taskkill /PID <PID> /F
+
+3. TEFAS API hatası:
+   → İnternet bağlantısı
+   → Firewall/Antivirus kontrol et
+
+═══════════════════════════════════════════════════════════════
+
+📚 YARDIM DOSYALARI:
+
+- WINDOWS_HIZLI_KURULUM.md : Detaylı adımlar
+- WINDOWS_SETUP.md          : Build sorunları
+- HIZLI_COZUM.md            : Hızlı çözümler
+- KULLANIM_KILAVUZU.md      : Uygulama kullanımı
+
+═══════════════════════════════════════════════════════════════
+
+✅ BAŞARI KONTROL:
+
+□ Backend npm install tamamlandı
+□ Backend başladı (localhost:3000)
+□ Mobile başladı (Expo)
+□ Web'de açıldı
+□ "Ara" sekmesini görüyorum
+□ Fon arayabiliyorum
+
+═══════════════════════════════════════════════════════════════
+
+💡 ÖNEMLİ NOT:
+
+Backend npm install sırasında better-sqlite3 hatası alırsan:
+1. Visual Studio Build Tools yükle (WINDOWS_SETUP.md)
+2. Veya package-windows.json kullan (sql.js ile)
+3. Veya Docker kullan
+
+═══════════════════════════════════════════════════════════════
+
+🎉 İYİ ŞANSLAR!
+
+Sorularınız için: WINDOWS_HIZLI_KURULUM.md
