@@ -1,0 +1,128 @@
+╔══════════════════════════════════════════════════════════════╗
+║                                                              ║
+║         🎯 TEFAS TRACKER - HIZLI BAŞLANGIÇ                  ║
+║                                                              ║
+╚══════════════════════════════════════════════════════════════╝
+
+📍 ŞU AN NEREDESINIZ?
+────────────────────────────────────────────────────────────────
+✓ Mobile npm install tamamladınız
+✓ expo-router hatası düzeltildi
+✗ Backend npm install henüz yapılmadı
+
+
+📋 YAPMANIZ GEREKENLER (3 ADIM)
+────────────────────────────────────────────────────────────────
+
+1️⃣  BACKEND DEPENDENCIES YÜKLE
+   
+   PowerShell'de:
+   cd backend
+   npm install
+
+   ⏱️  Süre: 2-3 dakika
+
+
+2️⃣  BACKEND'İ BAŞLAT
+
+   npm run dev
+
+   ✅ Başarılı ise göreceksiniz:
+   ✅ Database initialized
+   ✅ Data sync started
+   🚀 Server running on http://localhost:3000
+
+
+3️⃣  MOBILE'I BAŞLAT (Yeni terminal)
+
+   cd mobile
+   npm start
+   
+   Sonra: 'w' tuşuna bas (web'de açılır)
+
+
+═══════════════════════════════════════════════════════════════
+
+
+🚨 HATA ALIRSAN (better-sqlite3 hatası):
+────────────────────────────────────────────────────────────────
+
+Backend npm install sırasında hata alırsan:
+
+ÇÖZÜM 1: Windows SDK Yükle
+   → WINDOWS_SETUP.md dosyasını oku
+   → Visual Studio Build Tools gerekli
+
+ÇÖZÜM 2: sql.js Kullan (Kolay)
+   cd backend
+   copy package-windows.json package.json
+   npm install
+
+ÇÖZÜM 3: Docker Kullan
+   docker-compose up
+
+
+═══════════════════════════════════════════════════════════════
+
+
+⚡ OTOMATIK KURULUM:
+────────────────────────────────────────────────────────────────
+
+PowerShell'i Administrator olarak çalıştır:
+
+.\scripts\windows-kurulum.ps1
+
+Her şeyi otomatik yapar!
+
+
+═══════════════════════════════════════════════════════════════
+
+
+📚 YARDIM DOSYALARI:
+────────────────────────────────────────────────────────────────
+
+WINDOWS_HIZLI_KURULUM.md  → Adım adım tüm çözümler
+KURULUM_NOTLARI.txt        → Kısa özet
+WINDOWS_SETUP.md           → Build sorunları
+KULLANIM_KILAVUZU.md       → Uygulama nasıl kullanılır
+
+
+═══════════════════════════════════════════════════════════════
+
+
+🎯 İLK DENEMENİZ İÇİN:
+────────────────────────────────────────────────────────────────
+
+PowerShell'de şu komutu çalıştırın:
+
+cd backend
+npm install
+
+Sonucu bana gönderin!
+
+
+═══════════════════════════════════════════════════════════════
+
+
+✨ ÖZELLİKLER:
+────────────────────────────────────────────────────────────────
+
+✓ Gerçek TEFAS verisi (www.tefas.gov.tr)
+✓ Fon arama
+✓ Portföy yönetimi (lot + fiyat)
+✓ Favoriler
+✓ Canlı takip
+✓ Web + Android
+
+
+═══════════════════════════════════════════════════════════════
+
+
+💡 NOT:
+Backend npm install sırasında "gyp ERR!" görürsen normal!
+Sadece Windows SDK gerekiyor. WINDOWS_SETUP.md'ye bak.
+
+
+═══════════════════════════════════════════════════════════════
+
+🚀 BAŞARILAR! 🎉
