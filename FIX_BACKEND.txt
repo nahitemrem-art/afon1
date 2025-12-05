@@ -1,0 +1,37 @@
+╔══════════════════════════════════════════════════════════════╗
+║  BACKEND HATASI ÇÖZÜMÜ                                       ║
+╚══════════════════════════════════════════════════════════════╝
+
+HATA: Cannot find module 'better-sqlite3'
+
+SEBEP: Windows'ta C++ build tools gerekiyor
+
+ÇÖZÜM: sql.js versiyonunu kullan (Pure JavaScript)
+
+ADIMLAR:
+─────────────────────────────────────────────────────────────
+
+PowerShell'de:
+
+cd C:\Users\admin\Downloads\afon1\backend
+
+# 1. Package.json'u değiştir
+copy package-windows.json package.json
+
+# 2. node_modules'u temizle
+Remove-Item node_modules -Recurse -Force
+
+# 3. Yeniden yükle
+npm install
+
+# 4. Başlat
+npm run dev
+
+═══════════════════════════════════════════════════════════════
+
+✅ Başarılı olursa göreceksiniz:
+   ✅ Database initialized
+   ✅ Data sync started
+   🚀 Server running on http://localhost:3000
+
+═══════════════════════════════════════════════════════════════

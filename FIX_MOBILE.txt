@@ -1,0 +1,36 @@
+╔══════════════════════════════════════════════════════════════╗
+║  MOBILE WEB HATASI ÇÖZÜMÜ                                    ║
+╚══════════════════════════════════════════════════════════════╝
+
+HATA: Unable to resolve "../../App"
+
+SEBEP: Expo AppEntry.js doğru path'i bulamıyor
+
+ÇÖZÜM: Cache temizle ve yeniden başlat
+
+ADIMLAR:
+─────────────────────────────────────────────────────────────
+
+PowerShell'de:
+
+cd C:\Users\admin\Downloads\afon1\mobile
+
+# 1. Durdur (Ctrl+C)
+
+# 2. Cache temizle
+Remove-Item -Recurse -Force .expo
+npx expo start --clear
+
+# 3. Web'de aç
+# 'w' tuşuna bas
+
+═══════════════════════════════════════════════════════════════
+
+ALTERNAT İF ÇÖZÜM:
+
+# node_modules'u da temizle
+Remove-Item node_modules -Recurse -Force
+npm install
+npm start
+
+═══════════════════════════════════════════════════════════════
